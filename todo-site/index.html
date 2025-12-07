@@ -1,0 +1,146 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head><!-- Made by Sina Saberi -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management - To-Do App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>DO It</h1>
+                <p>Organize your life</p>
+            </div>
+            <div class="header-actions">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Search tasks...">
+                </div>
+                <div class="theme-toggle" id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <button class="add-task-btn" id="add-task-btn">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-icon completed">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="completed-count">0</h3>
+                    <p>Completed Tasks</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon pending">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="pending-count">0</h3>
+                    <p>Pending Tasks</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon overdue">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="overdue-count">0</h3>
+                    <p>Overdue Tasks</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="lists-container">
+            <div class="list-section" data-list="personal">
+                <div class="list-header">
+                    <div class="list-color list-personal"></div>
+                    <h2 class="list-title">Personal</h2>
+                    <span class="list-count" id="personal-count">0 tasks</span>
+                </div>
+                <div class="tasks-container" id="personal-tasks"></div>
+            </div>
+
+            <div class="list-section" data-list="work">
+                <div class="list-header">
+                    <div class="list-color list-work"></div>
+                    <h2 class="list-title">Work</h2>
+                    <span class="list-count" id="work-count">0 tasks</span>
+                </div>
+                <div class="tasks-container" id="work-tasks"></div>
+            </div>
+
+            <div class="list-section" data-list="study">
+                <div class="list-header">
+                    <div class="list-color list-study"></div>
+                    <h2 class="list-title">Study</h2>
+                    <span class="list-count" id="study-count">0 tasks</span>
+                </div>
+                <div class="tasks-container" id="study-tasks"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Task Modal -->
+    <div class="modal-overlay" id="task-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="modal-title">Add New Task</h2>
+                <button class="close-modal" id="close-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="task-title">Title *</label>
+                    <input type="text" id="task-title" class="form-control" placeholder="What needs to be done?">
+                </div>
+                <div class="form-group">
+                    <label for="task-description">Description</label>
+                    <textarea id="task-description" class="form-control" placeholder="Add details..."></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="task-category">Category</label>
+                        <select id="task-category" class="form-control">
+                            <option value="personal">Personal</option>
+                            <option value="work">Work</option>
+                            <option value="study">Study</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-priority">Priority</label>
+                        <select id="task-priority" class="form-control">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="task-due-date">Due Date</label>
+                    <input type="date" id="task-due-date" class="form-control">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="cancel-btn">Cancel</button>
+                <button class="btn btn-primary" id="save-task-btn">Add Task</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="main.js"></script>
+</body>
+</html>
+
