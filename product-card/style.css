@@ -1,0 +1,707 @@
+:root{
+    --primary: #2175f5;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    direction: rtl;
+    font-family: 'Vazir', 'Vazir FD', 'Vazir Farsi', Tahoma, Arial, sans-serif !important;
+}
+
+body{
+    background-color: #f5f5f5;
+    font-family: 'Vazir', 'Vazir FD', 'Vazir Farsi', Tahoma, Arial, sans-serif !important;
+}
+
+.container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    overflow-x: hidden;
+}
+
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 860px;
+}
+
+.shoeBackground{
+    position: relative;
+    width: 50%;
+    height: 475px;
+    box-shadow: 15px 0 35px rgba(0, 0, 0, 0.1),
+    0 -15px 35px rgba(0, 0, 0, 0.1),
+    0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: .5s;
+}
+
+.gradients{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.gradient{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+}
+
+.first{
+    z-index: 0;
+    animation: 1s width ease;
+}
+
+@keyframes width{
+    from{
+        width: 0%;
+    }
+    to{
+        width: 100%;
+    }
+}
+
+.second{
+    z-index: -1;
+}
+
+.gradient[color="blue"]{
+    background-image: linear-gradient(45deg, #0136af, #22abfa);
+}
+
+.gradient[color="red"]{
+    background-image: linear-gradient(45deg, #d62926, #ee625f);
+}
+
+.gradient[color="green"]{
+    background-image: linear-gradient(45deg, #11998e, #1ce669);
+}
+
+.gradient[color="orange"]{
+    background-image: linear-gradient(45deg, #fc4a1a, #f7b733);
+}
+
+.gradient[color="black"]{
+    background-image: linear-gradient(45deg, #111, #666);
+}
+
+.logo{
+    position: absolute;
+    width: 100px;
+    right: 20px;
+    top: 20px;
+}
+
+.share{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: var(--primary);
+    transition: .5s;
+}
+
+.share:hover{
+    transform: scale(1.1);
+}
+
+.share i{
+    line-height: 50px;
+}
+
+.nike{
+    position: absolute;
+    top: 85px;
+    right: 15px;
+    font-size: 11rem;
+    line-height: .9;
+    color: #fff;
+    opacity: .1;
+    font-family: 'Vazir', 'Vazir FD', 'Vazir Farsi', Tahoma, Arial, sans-serif !important;
+}
+
+.shoe{
+    position: absolute;
+    width: 140%;
+    opacity: 0;
+    bottom: 0;
+    left: 0;
+    transform: rotate(20deg);
+    transition: .5s;
+}
+
+.shoe.show{
+    opacity: 1;
+}
+
+.info{
+    width: 50%;
+    background-color: #fff;
+    z-index: 1;
+    padding: 35px 40px;
+    box-shadow: -15px 0 35px rgba(0, 0, 0, 0.1),
+    0 -15px 35px rgba(0, 0, 0, 0.1),
+    0 15px 35px rgba(0, 0, 0, 0.1);
+    font-family: 'Vazir', 'Vazir FD', 'Vazir Farsi', Tahoma, Arial, sans-serif !important;
+    direction: ltr;
+}
+
+@media (max-width: 1200px){
+    .card{
+        max-width: 95%;
+    }
+    
+    .info{
+        padding: 30px 35px;
+    }
+}
+
+@media (max-width: 900px){
+    .container{
+        padding: 30px 15px;
+    }
+    
+    .info{
+        padding: 25px 30px;
+    }
+    
+    .shoeName div .big{
+        font-size: 1.7rem;
+    }
+    
+    .title{
+        font-size: 1.1rem;
+    }
+    
+    .text{
+        font-size: 16px;
+    }
+}
+
+.shoeName{
+    padding: 0 0 10px 0;
+}
+
+.shoeName div{
+    display: flex;
+    align-items: center;
+    font-style: italic;
+}
+
+.shoeName div .big{
+    font-size: 2rem;
+    color: #333;
+    line-height: 1;
+    font-family: 'Arial Black' !important;
+}
+
+.shoeName div .new{
+    background-color: var(--primary);
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 5px;
+    transition: .5s;
+    font-family: 'Vazir', 'Vazir FD', 'Vazir Farsi', Tahoma, Arial, sans-serif !important;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.shoeName .small{
+    font-weight: 500;
+    color: #444;
+    margin-top: 3px;
+    font-family: 'Gloucester MT Extra Condensed' !important;
+}
+
+.shoeName, .description, .color-container, .size-container{
+    border-bottom: 1px solid #dadada;
+}
+
+.description{
+    padding: 10px 0;
+}
+
+.title{
+    color: #3a3a3a;
+    font-weight: 600;
+    font-size: 1.2rem;
+    font-family: 'Arial Rounded MT Bold' !important;
+}
+
+.text{
+    color: #555;
+    font-size: 17px;
+    font-family: 'Arial Rounded MT Bold' !important;
+    line-height: 1.8;
+}
+
+.color-container{
+    padding: 10px 0;
+}
+
+.colors{
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+.color{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 0 10px;
+    border: 3px solid;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.color[color="blue"]{
+    background-color: #2175f5;
+    border-color: #2175f5;
+}
+
+.color[color="red"]{
+    background-color: #f84848;
+    border-color: #f84848;
+}
+
+.color[color="green"]{
+    background-color: #29b864;
+    border-color: #29b864;
+}
+
+.color[color="orange"]{
+    background-color: #ff5521;
+    border-color: #ff5521;
+}
+
+.color[color="black"]{
+    background-color: #444;
+    border-color: #444;
+}
+
+.color.active{
+    border-color: #fff;
+    box-shadow: 0 0 10px .5px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+}
+
+.size-container{
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+
+.sizes{
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+.size{
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    background-color: #eee;
+    margin: 0 10px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .3s;
+    font-family: 'Vazir', 'Vazir FD', 'Vazir Farsi', Tahoma, Arial, sans-serif !important;
+}
+
+.size.active{
+    background-color: var(--primary);
+    color: #fff;
+    transition: .5s;
+}
+
+.buy-price{
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price{
+    color: #333;
+    display: flex;
+    align-items: flex-start;
+}
+
+.price h1{
+    font-size: 2.1rem;
+    font-weight: 600;
+    line-height: 1;
+    font-family: 'Vazir', 'Vazir FD', 'Vazir Farsi', Tahoma, Arial, sans-serif !important;
+}
+
+.price i{
+    font-size: 1.4rem;
+    margin-left: 1px;
+}
+
+.buy{
+    padding: .7rem 1rem;
+    border-radius: 10px;
+    background-color: var(--primary);
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: .5s;
+    font-family: 'Vazir', 'Vazir FD', 'Vazir Farsi', Tahoma, Arial, sans-serif !important;
+}
+
+.buy:hover{
+    transform: scale(1.1);
+}
+
+.buy i{
+    margin-left: 2px;
+}
+
+@media (max-width: 1070px){
+    .shoe{
+        width: 135%;
+    }
+}
+
+@media (max-width: 1000px){
+    .card{
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        box-shadow: 0 0 35px 1px rgba(0, 0, 0, 0.2);
+    }
+    
+    .card > div{
+        width: 100%;
+        box-shadow: none;
+    }
+    
+    .shoeBackground{
+        height: 400px;
+        min-height: 400px;
+    }
+
+    .shoe{
+        width: 100%;
+        max-width: 100%;
+        transform: rotate(5deg) translateY(-50%);
+        top: 55%;
+        left: 2%;
+    }
+
+    .nike{
+        top: 20%;
+        right: 5%;
+        font-size: 9rem;
+    }
+    
+    .info{
+        width: 100%;
+        padding: 30px 25px;
+    }
+    
+    .buy-price{
+        flex-direction: column;
+        gap: 20px;
+        align-items: stretch;
+    }
+    
+    .buy{
+        width: 100%;
+        text-align: center;
+    }
+    
+    .price{
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px){
+    .container{
+        padding: 20px 10px;
+    }
+    
+    .shoeBackground{
+        height: 350px;
+        min-height: 350px;
+    }
+    
+    .nike{
+        font-size: 8rem;
+        top: 15%;
+    }
+    
+    .info{
+        padding: 25px 20px;
+    }
+    
+    .shoeName div .big{
+        font-size: 1.5rem;
+    }
+    
+    .title{
+        font-size: 1rem;
+    }
+    
+    .text{
+        font-size: 15px;
+    }
+    
+    .buy{
+        font-size: 1rem;
+        padding: .6rem .9rem;
+    }
+    
+    .price h1{
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 600px){
+    .share{
+        width: 40px;
+        height: 40px;
+    }
+
+    .share i {
+        font-size: 1rem;
+        line-height: 40px;
+    }
+
+    .logo{
+        width: 70px;
+        right: 20px;
+        left: auto;
+    }
+    
+    .shoeBackground{
+        height: 300px;
+        min-height: 300px;
+    }
+    
+    .nike{
+        font-size: 7rem;
+        top: 10%;
+        right: 3%;
+    }
+    
+    .info{
+        padding: 20px 15px;
+    }
+    
+    .colors{
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    
+    .sizes{
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+}
+
+@media (max-width: 490px){
+    .container{
+        padding: 15px 10px;
+    }
+    
+    .shoeBackground{
+        height: 280px;
+        min-height: 280px;
+    }
+    
+    .nike{
+        font-size: 6rem;
+        top: 8%;
+        right: 2%;
+    }
+
+    .shoeName div .big{
+        font-size: 1.3rem;
+    }
+
+    .small{
+        font-size: 1rem;
+    }
+
+    .new{
+        padding: 2px 6px;
+        font-size: .9rem;
+    }
+
+    .title{
+        font-size: .9rem;
+    }
+
+    .text{
+        font-size: .85rem;
+        line-height: 1.6;
+    }
+
+    .buy{
+        padding: .5rem .8rem;
+        font-size: .85rem;
+    }
+
+    .price h1{
+        font-size: 1.5rem;
+    }
+
+    .price i{
+        font-size: .9rem;
+    }
+
+    .size{
+        width: 30px;
+        height: 30px;
+        margin: 0 5px;
+        font-size: .9rem;
+        line-height: 30px;
+    }
+
+    .color{
+        margin: 0 5px;
+        width: 20px;
+        height: 20px;
+        border-width: 4px;
+    }
+
+    .share{
+        width: 35px;
+        height: 35px;
+        top: 10px;
+        left: 10px;
+    }
+
+    .share i{
+        font-size: .8rem;
+        line-height: 35px;
+    }
+
+    .logo{
+        width: 60px;
+        top: 10px;
+        right: 10px;
+    }
+
+    .info{
+        padding: 18px 15px;
+    }
+    
+    .shoeName, .description, .color-container, .size-container{
+        padding-bottom: 8px;
+        margin-bottom: 8px;
+    }
+}
+
+@media (max-width: 400px){
+    .buy i{
+        display: none;
+    }
+
+    .container{
+        padding: 15px 8px;
+    }
+    
+    .shoeBackground{
+        height: 250px;
+        min-height: 250px;
+    }
+    
+    .nike{
+        font-size: 5rem;
+        top: 5%;
+    }
+    
+    .info{
+        padding: 15px 12px;
+    }
+    
+    .shoeName div .big{
+        font-size: 1.2rem;
+    }
+    
+    .title{
+        font-size: .85rem;
+    }
+    
+    .text{
+        font-size: .8rem;
+    }
+    
+    .size{
+        width: 28px;
+        height: 28px;
+        margin: 0 4px;
+        font-size: .85rem;
+        line-height: 28px;
+    }
+    
+    .color{
+        width: 18px;
+        height: 18px;
+        margin: 0 4px;
+        border-width: 3px;
+    }
+    
+    .price h1{
+        font-size: 1.3rem;
+    }
+    
+    .buy{
+        font-size: .8rem;
+        padding: .45rem .7rem;
+    }
+}
+
+@media (max-width: 320px){
+    .nike{
+        font-size: 4rem;
+    }
+    
+    .logo{
+        width: 50px;
+    }
+    
+    .share{
+        width: 30px;
+        height: 30px;
+    }
+    
+    .share i{
+        font-size: .7rem;
+        line-height: 30px;
+    }
+    
+    .shoeBackground{
+        height: 220px;
+        min-height: 220px;
+    }
+}
