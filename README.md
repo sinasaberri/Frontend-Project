@@ -5,8 +5,8 @@
 A curated collection of modern **Front-End projects** built for learning, practice, and portfolio purposes.
 
 ![HTML](https://img.shields.io/badge/HTML5-orange?style=for-the-badge&logo=html5)
-![CSS](https://img.shields.io/badge/CSS3-blue?style=for-the-badge&logo=css3)]
-![JavaScript](https://img.shields.io/badge/JavaScript-yellow?style=for-the-badge&logo=javascript)]
+![CSS](https://img.shields.io/badge/CSS3-blue?style=for-the-badge&logo=css3)
+![JavaScript](https://img.shields.io/badge/JavaScript-yellow?style=for-the-badge&logo=javascript)
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-black?style=for-the-badge&logo=github)
 
@@ -26,7 +26,7 @@ Each project is independent and can be run separately.
 ## Projects Showcase
 
 | Preview | Project Name | Live Demo | Source Code |
-|-------|-------------|-------------|----------|------------|
+
 | 🎵 | **musicplayer-site** |🔗 [Live Demo](https://sinasaberri.github.io/Frontend-Projects/musicplayer-site) | 📂 [Code](https://github.com/sinasaberri/Frontend-Projects/tree/main/musicplayer-site) |
 | 🌦 | **weather-2-site** |🔗 [Live Demo](https://sinasaberri.github.io/Frontend-Projects/weather-2-site) | 📂 [Code](https://github.com/sinasaberri/Frontend-Projects/tree/main/weather-2-site) |
 | 🌩 | **weather-site** |🔗 [Live Demo](https://sinasaberri.github.io/Frontend-Projects/weather-site) | 📂 [Code](https://github.com/sinasaberri/Frontend-Projects/tree/main/weather-site) |
